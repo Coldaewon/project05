@@ -24,10 +24,14 @@ class Emitter{
         this.particles.splice(i,1);
       }
     }
+    
     this.addParticle();
-  }
+    }
+ 
   addParticle(){
-    this.particles.push(new this.particles(this.origin.x, this.origin.y));
+    for(let i = 0; i < 100; i++){
+        this.particles.push(new Particle(this.origin.x, this.origin.y));
+      }
   }
 }
 
