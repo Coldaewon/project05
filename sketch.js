@@ -24,8 +24,10 @@ class Emitter{
         this.particles.splice(i,1);
       }
     }
-    
-    this.addParticle();
+
+    if(random(1) < 0.05){
+      this.addParticle();
+    }
     }
  
   addParticle(){
