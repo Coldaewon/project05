@@ -41,6 +41,7 @@ class Particle(
     this.vel = createVector(random(-1, 1), random(-3, 0));
     this.acc = createVector(0, 0.1);
     this.lifespan = 255;
+    this.color = color(random(200, 255), random(100, 200), random(100, 255));
   }
 
   run(){
@@ -55,7 +56,7 @@ class Particle(
   }
 
   show(){
-    fill(255, this.lifespan);
+    fill(red(this.color), green(this.color), blue(this.color), this.lifespan);
     noStroke();
     circle(this.pos.x, this.pos.y, 8);
   }
