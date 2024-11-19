@@ -30,3 +30,33 @@ class Emitter{
     this.particles.push(new this.particles(this.origin.x, this.origin.y));
   }
 }
+
+class Particle(
+  constructor(x, y){
+    this.pos = createVector(x, y);
+    this.vel = createVector(random(-1, 1), random(-3, 0));
+    this.acc = createVector(0, 0.1);
+    this.lifespan = 255;
+  }
+
+  run(){
+    this.update();
+    this.show();
+  }
+
+  update(){
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
+    this.lifespan -= 2;
+  }
+
+  show(){
+    fill(255, this.lifespan);
+    noStroke();
+    circle(this.pos.x, this.pos.y, 8);
+  }
+
+  isDead(){
+    return this.lifespan < 0;
+  }
+)
